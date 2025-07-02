@@ -1,27 +1,38 @@
+:root {
+  --color-bg: #212120;
+  --color-accent: #39657F;
+  --color-secondary: #7E5A54;
+  --color-highlight: #C5B07D;
+  --color-text: #f8fafc;
+  --color-card-bg: #282827;
+  --color-card-shadow: rgba(57, 101, 127, 0.08);
+}
+
 .container {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   font-family: 'Segoe UI', 'Roboto', 'Arial', sans-serif;
-  background: #f8fafc;
-  color: #222;
+  background: var(--color-bg);
+  color: var(--color-text);
 }
 
 .header {
   padding: 2rem 0 1rem 0;
   text-align: center;
-  background: #fff;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+  background: var(--color-card-bg);
+  box-shadow: 0 2px 8px var(--color-card-shadow);
 }
 
 .header h1 {
   margin: 0;
   font-size: 2.5rem;
   letter-spacing: 1px;
+  color: var(--color-accent);
 }
 
 .header p {
-  color: #555;
+  color: var(--color-highlight);
   margin-top: 0.5rem;
 }
 
@@ -35,17 +46,19 @@
 }
 
 .section {
-  background: #fff;
+  background: var(--color-card-bg);
   border-radius: 12px;
-  box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+  box-shadow: 0 2px 12px var(--color-card-shadow);
   padding: 2rem;
   margin: 1rem 0;
   width: 100%;
   max-width: 600px;
+  color: var(--color-text);
 }
 
 .section h2, .section h3 {
   margin-top: 0;
+  color: var(--color-accent);
 }
 
 .services {
@@ -58,7 +71,8 @@
 }
 
 .services li {
-  background: #e0e7ef;
+  background: var(--color-secondary);
+  color: var(--color-highlight);
   padding: 0.5rem 1.5rem;
   border-radius: 8px;
   font-weight: 500;
@@ -67,7 +81,7 @@
 .footer {
   text-align: center;
   padding: 1rem 0;
-  background: #f1f5f9;
+  background: var(--color-card-bg);
   font-size: 0.95rem;
-  color: #888;
+  color: var(--color-highlight);
 }
