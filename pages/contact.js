@@ -1,19 +1,18 @@
+// pages/contact.js
 import styles from '../styles/Home.module.css';
 
 export default function Contact() {
   return (
-    <div className={styles.container}>
-      <main className={styles.main}>
-        <section className={styles.section}>
-          <h2>Contact Us</h2>
-          <p>
-            Have questions or want to work with us? Email <a href="mailto:info@northstreamsolutions.com">info@northstreamsolutions.com</a>
-          </p>
-        </section>
-      </main>
-      <footer className={styles.footer}>
-        &copy; {new Date().getFullYear()} North Stream Solutions. All rights reserved.
-      </footer>
-    </div>
+    <main className={styles.main}>
+      <div className={styles.hero}>
+        <h1>Let's Build Something Great Together</h1>
+        <p>
+          Have a project in mind or want to learn more about our services? We'd love to hear from you.
+        </p>
+        <a href="mailto:info@northstreamsolutions.com" className={styles.ctaButton}>
+          Email Us
+        </a>
+      </div>
+    </main>
   );
 }

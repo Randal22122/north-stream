@@ -1,9 +1,34 @@
+/* styles/globals.css */
 :root {
   --color-bg: #212120;
   --color-accent: #39657F;
   --color-secondary: #7E5A54;
   --color-highlight: #C5B07D;
   --color-text: #f8fafc;
-  --color-card-bg: #282827;
+  --color-card-bg: rgba(40, 40, 39, 0.7); /* Semi-transparent for glassy effect */
   --color-card-shadow: rgba(57, 101, 127, 0.08);
+  --font-sans: 'Inter', sans-serif;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: var(--font-sans);
+  background-color: var(--color-bg);
+  color: var(--color-text);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--color-accent);
+  font-weight: 700;
 }

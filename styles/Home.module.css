@@ -1,83 +1,76 @@
+/* styles/Home.module.css */
 .container {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  font-family: 'Segoe UI', 'Roboto', 'Arial', sans-serif;
-  background: var(--color-bg);
-  color: var(--color-text);
-}
-
-.header {
-  padding: 2rem 0 1rem 0;
-  text-align: center;
-  background: var(--color-card-bg);
-  box-shadow: 0 2px 8px var(--color-card-shadow);
-}
-
-.header h1 {
-  margin: 0;
-  font-size: 2.5rem;
-  letter-spacing: 1px;
-  color: var(--color-accent);
-}
-
-.header p {
-  color: var(--color-highlight);
-  margin-top: 0.5rem;
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 2rem 1rem 8rem 1rem; /* Added bottom padding for nav */
 }
 
 .main {
-  flex: 1;
+  min-height: 80vh;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
-  justify-content: center;
-  padding: 2rem 1rem;
+  text-align: center;
 }
 
-.section {
-  background: var(--color-card-bg);
-  border-radius: 12px;
-  box-shadow: 0 2px 12px var(--color-card-shadow);
-  padding: 2rem;
-  margin: 1rem 0;
-  width: 100%;
-  max-width: 600px;
+.hero {
+  max-width: 800px;
+}
+
+.hero h1 {
+  font-size: 3.5rem;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  font-size: 1.2rem;
   color: var(--color-text);
+  margin-bottom: 2rem;
 }
 
-.section h2, .section h3 {
-  margin-top: 0;
-  color: var(--color-accent);
-}
-
-.services {
-  list-style: none;
-  padding: 0;
-  display: flex;
-  gap: 2rem;
-  justify-content: center;
-  margin: 1rem 0 0 0;
-}
-
-.services li {
-  background: var(--color-secondary);
-  color: var(--color-highlight);
-  padding: 0.5rem 1.5rem;
+.ctaButton {
+  background-color: var(--color-highlight);
+  color: var(--color-bg);
+  padding: 1rem 2rem;
   border-radius: 8px;
+  font-weight: 700;
+  font-size: 1rem;
+  transition: transform 0.2s ease;
+}
+
+.ctaButton:hover {
+  transform: scale(1.05);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  width: 100%;
+  margin-top: 3rem;
+}
+
+.card {
+  background: var(--color-card-bg);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 2rem;
+  border-radius: 16px;
+  text-align: left;
+  box-shadow: var(--color-card-shadow);
+}
+
+.card h3 {
+  margin-top: 0;
+  color: var(--color-highlight);
 }
 
 .footer {
   text-align: center;
-  padding: 1rem 0;
-  background: var(--color-card-bg);
-  font-size: 0.95rem;
-  color: var(--color-highlight);
-}
-.footer {
-  text-align: center;
-  padding: 1rem 0;
-  background: var(--color-card-bg);
-  font-size: 0.95rem;
-  color: var(--color-highlight);
+  padding: 2rem 0 1rem 0;
+  color: var(--color-text);
+  font-size: 0.9rem;
 }
