@@ -1,3 +1,4 @@
+import '../styles/globals.css';
 import '../styles/Home.module.css';
 import styles from '../styles/Nav.module.css';
 import Link from 'next/link';

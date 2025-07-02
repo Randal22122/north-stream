@@ -1,0 +1,9 @@
+:root {
+  --color-bg: #212120;
+  --color-accent: #39657F;
+  --color-secondary: #7E5A54;
+  --color-highlight: #C5B07D;
+  --color-text: #f8fafc;
+  --color-card-bg: #282827;
+  --color-card-shadow: rgba(57, 101, 127, 0.08);
+}

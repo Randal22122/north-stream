@@ -1,13 +1,3 @@
-:root {
-  --color-bg: #212120;
-  --color-accent: #39657F;
-  --color-secondary: #7E5A54;
-  --color-highlight: #C5B07D;
-  --color-text: #f8fafc;
-  --color-card-bg: #282827;
-  --color-card-shadow: rgba(57, 101, 127, 0.08);
-}
-
 .container {
   min-height: 100vh;
   display: flex;
@@ -75,6 +65,16 @@
   color: var(--color-highlight);
   padding: 0.5rem 1.5rem;
   border-radius: 8px;
+  font-weight: 500;
+}
+
+.footer {
+  text-align: center;
+  padding: 1rem 0;
+  background: var(--color-card-bg);
+  font-size: 0.95rem;
+  color: var(--color-highlight);
+}
   font-weight: 500;
 }
 
