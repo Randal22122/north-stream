@@ -27,7 +27,7 @@
 
 .hero p {
   font-size: 1.2rem;
-  color: var(--color-card-bg);
+  color: var(--color-text);
   margin-bottom: 2rem;
 }
 
