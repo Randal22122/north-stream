@@ -4,8 +4,6 @@ import styles from '../styles/Nav.module.css';
 import homeStyles from '../styles/Home.module.css';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-import { useState, useEffect } from 'react';
-import { useRouter } from 'next/router';
 
 function Layout({ children }) {
   return <div className={homeStyles.container}>{children}</div>;
