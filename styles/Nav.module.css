@@ -43,6 +43,6 @@
 }
 
 .activeLink {
-  background-color: var(--color-highlight);
+  background-color: var(--color-accent);
   color: var(--color-bg);
 }

@@ -1,6 +1,6 @@
 /* styles/globals.css */
 :root {
-  --color-bg: #212120;
+  --color-bg: #f8fafc; /* Default background color */
   --color-accent: #39657F;
   --color-secondary: #7E5A54;
   --color-highlight: #C5B07D;
@@ -8,6 +8,8 @@
   --color-card-bg: rgba(40, 40, 39, 0.7); /* Semi-transparent for glassy effect */
   --color-card-shadow: rgba(57, 101, 127, 0.08);
   --font-sans: 'Inter', sans-serif;
+  
+  /* --color-bg: #212120; */
 }
 
 html,
