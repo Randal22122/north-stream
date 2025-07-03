@@ -1,15 +1,156 @@
 /* styles/globals.css */
+
+/* Define CSS Variables for Light and Dark Themes */
 :root {
-  --color-bg: #f8fafc; /* Default background color */
-  --color-accent: #39657F;
-  --color-secondary: #7E5A54;
-  --color-highlight: #C5B07D;
-  --color-text: #212120;
-  --color-card-bg: #fff; /* Changed to white for light mode */
-  --color-card-shadow: rgba(57, 101, 127, 0.08);
+  /* User's Original Palette (Light Theme Defaults) */
+  --site-color-bg: #f8fafc; /* Original Background Color */
+  --site-color-accent: #39657F; /* Original Accent: Muted Blue-Gray */
+  --site-color-secondary: #7E5A54; /* Original Secondary: Muted Reddish-Brown */
+  --site-color-highlight: #C5B07D; /* Original Highlight: Muted Gold/Yellow */
+  --site-color-text: #212120; /* Original Text: Very Dark Gray */
+  --site-color-card-bg: #ffffff; /* Original Card Background: White */
+  --site-color-card-shadow: rgba(57, 101, 127, 0.08); /* Original Card Shadow */
+
   --font-sans: 'Inter', sans-serif;
-  
-  /* --color-bg: #212120; */
+
+  /* Derived Colors for Light Theme (using user's palette as base) */
+  --color-primary: var(--site-color-accent); /* Main blue-gray for buttons, links, etc. */
+  --color-primary-hover: #2d4c60; /* Slightly darker accent for hover */
+  --color-secondary-brand: var(--site-color-secondary); /* Main reddish-brown for gradients */
+  --color-secondary-brand-hover: #6a4a45; /* Darker reddish-brown for hover */
+  --color-highlight-brand: var(--site-color-highlight); /* Main gold for specific highlights */
+
+  --color-gradient-start: var(--site-color-accent);
+  --color-gradient-end: var(--site-color-secondary);
+
+  --color-text-primary: var(--site-color-text); /* Main body text */
+  --color-text-secondary: #4b5563; /* General secondary text (similar to gray-600) */
+  --color-text-light: #ffffff; /* Text on dark/accent backgrounds */
+  --color-text-muted: #6b7280; /* Muted text */
+
+  --color-background-body: var(--site-color-bg);
+  --color-background-section: #f9fafb; /* Slightly darker than body bg for sections */
+  --color-background-card: var(--site-color-card-bg);
+  --color-background-light-accent: #eef2f6; /* Light background based on accent */
+  --color-background-dark-footer: var(--site-color-text); /* Using user's dark text for footer */
+  --color-background-dark-footer-text: #d1d5db; /* Light gray for footer text */
+  --color-background-dark-footer-text-muted: #9ca3af; /* Muted gray for footer copyright */
+
+  --color-border-default: #d1d5db;
+  --color-border-light-accent: #aabcc8; /* Lighter border based on accent */
+  --color-border-medium-accent: #7f97a8; /* Medium border based on accent */
+
+  --color-shadow-light: rgba(0, 0, 0, 0.05);
+  --color-shadow-md: rgba(0, 0, 0, 0.1);
+  --color-shadow-lg: rgba(0, 0, 0, 0.1);
+  --color-shadow-xl: rgba(0, 0, 0, 0.15);
+
+  --color-icon-success: #22c55e;
+  --color-icon-success-light: #86efac;
+
+  /* RGB values for transparent shadows */
+  --color-primary-rgb: 57, 101, 127; /* RGB for #39657F (site-color-accent) */
+  --color-gradient-start-rgb: 57, 101, 127;
+}
+
+/* Dark Theme Overrides */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --site-color-bg: #1a1a1a; /* Darker background */
+    --site-color-accent: #5c87a6; /* Lighter/more visible accent for dark mode */
+    --site-color-secondary: #a07a74; /* Lighter/more visible secondary for dark mode */
+    --site-color-highlight: #e0c997; /* Lighter/more visible highlight for dark mode */
+    --site-color-text: #f3f4f6; /* Light text for dark mode */
+    --site-color-card-bg: #2d3748; /* Darker card background */
+    --site-color-card-shadow: rgba(0, 0, 0, 0.4); /* Darker shadow for dark mode */
+
+    /* Derived Colors for Dark Theme */
+    --color-primary: var(--site-color-accent);
+    --color-primary-hover: #4a708a;
+    --color-secondary-brand: var(--site-color-secondary);
+    --color-secondary-brand-hover: #8a6a65;
+    --color-highlight-brand: var(--site-color-highlight);
+
+    --color-gradient-start: var(--site-color-accent);
+    --color-gradient-end: var(--site-color-secondary);
+
+    --color-text-primary: var(--site-color-text);
+    --color-text-secondary: #d1d5db;
+    --color-text-light: #1f2937; /* Dark text for light buttons in dark mode */
+    --color-text-muted: #9ca3af;
+
+    --color-background-body: var(--site-color-bg);
+    --color-background-section: #1f2937;
+    --color-background-card: var(--site-color-card-bg);
+    --color-background-light-accent: #2a3547;
+    --color-background-dark-footer: #0f172a;
+    --color-background-dark-footer-text: #94a3b8;
+    --color-background-dark-footer-text-muted: #64748b;
+
+    --color-border-default: #4b5563;
+    --color-border-light-accent: #3b82f6;
+    --color-border-medium-accent: #2563eb;
+
+    --color-shadow-light: rgba(0, 0, 0, 0.2);
+    --color-shadow-md: rgba(0, 0, 0, 0.3);
+    --color-shadow-lg: rgba(0, 0, 0, 0.4);
+    --color-shadow-xl: rgba(0, 0, 0, 0.5);
+
+    --color-icon-success: #86efac;
+    --color-icon-success-light: #22c55e;
+
+    --color-primary-rgb: 92, 135, 166; /* RGB for #5c87a6 */
+    --color-gradient-start-rgb: 92, 135, 166;
+  }
+}
+
+/* Manual Dark Theme Toggle (apply this to the <body> tag) */
+body[data-theme='dark'] {
+  /* This block mirrors the prefers-color-scheme: dark for explicit toggle */
+  --site-color-bg: #1a1a1a;
+  --site-color-accent: #5c87a6;
+  --site-color-secondary: #a07a74;
+  --site-color-highlight: #e0c997;
+  --site-color-text: #f3f4f6;
+  --site-color-card-bg: #2d3748;
+  --site-color-card-shadow: rgba(0, 0, 0, 0.4);
+
+  --color-primary: var(--site-color-accent);
+  --color-primary-hover: #4a708a;
+  --color-secondary-brand: var(--site-color-secondary);
+  --color-secondary-brand-hover: #8a6a65;
+  --color-highlight-brand: var(--site-color-highlight);
+
+  --color-gradient-start: var(--site-color-accent);
+  --color-gradient-end: var(--site-color-secondary);
+
+  --color-text-primary: var(--site-color-text);
+  --color-text-secondary: #d1d5db;
+  --color-text-light: #1f2937;
+  --color-text-muted: #9ca3af;
+
+  --color-background-body: var(--site-color-bg);
+  --color-background-section: #1f2937;
+  --color-background-card: var(--site-color-card-bg);
+  --color-background-light-accent: #2a3547;
+  --color-background-dark-footer: #0f172a;
+  --color-background-dark-footer-text: #94a3b8;
+  --color-background-dark-footer-text-muted: #64748b;
+
+  --color-border-default: #4b5563;
+  --color-border-light-accent: #3b82f6;
+  --color-border-medium-accent: #2563eb;
+
+  --color-shadow-light: rgba(0, 0, 0, 0.2);
+  --color-shadow-md: rgba(0, 0, 0, 0.3);
+  --color-shadow-lg: rgba(0, 0, 0, 0.4);
+  --color-shadow-xl: rgba(0, 0, 0, 0.5);
+
+  --color-icon-success: #86efac;
+  --color-icon-success-light: #22c55e;
+
+  --color-primary-rgb: 92, 135, 166;
+  --color-gradient-start-rgb: 92, 135, 166;
 }
 
 html,
@@ -17,8 +158,9 @@ body {
   padding: 0;
   margin: 0;
   font-family: var(--font-sans);
-  background-color: var(--color-bg);
-  color: var(--color-text);
+  background-color: var(--color-background-body); /* Use theme variable */
+  color: var(--color-text-primary); /* Use theme variable */
+  transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition */
 }
 
 a {
@@ -31,6 +173,7 @@ a {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  color: var(--color-accent);
+  color: var(--site-color-accent); /* Use user's original accent for headings */
   font-weight: 700;
+  transition: color 0.3s ease; /* Smooth transition */
 }

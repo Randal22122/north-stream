@@ -1,48 +1,115 @@
 /* styles/Nav.module.css */
 .navbar {
   position: fixed;
-  bottom: 2rem;
-  left: 50%;
-  transform: translateX(-50%);
-  padding: 0.8rem 1rem;
-  background: var(--color-card-bg);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 50px; /* Pill shape */
-  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
-  z-index: 1000;
+  top: 0; /* Changed from bottom */
+  left: 0;
+  width: 100%;
+  padding: 1rem 1.5rem; /* py-4 px-6 */
+  background-color: var(--color-background-card); /* Use theme variable */
+  box-shadow: 0 4px 6px -1px var(--color-shadow-md), 0 2px 4px -1px var(--color-shadow-light); /* Use theme variable */
+  z-index: 50;
   display: flex;
+  justify-content: space-between;
   align-items: center;
-  gap: 1rem;
+  border-bottom-left-radius: 0.5rem; /* Rounded bottom corners */
+  border-bottom-right-radius: 0.5rem; /* Rounded bottom corners */
+  transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Smooth theme transition */
 }
 
-.logo {
-  font-size: 1.2rem;
-  font-weight: 700;
-  color: var(--color-highlight);
-  padding: 0.5rem 1rem;
-  background-color: var(--color-accent);
-  border-radius: 50px;
+@media (min-width: 768px) { /* md breakpoint */
+  .navbar {
+    padding-left: 3rem; /* md:px-12 */
+    padding-right: 3rem; /* md:px-12 */
+  }
+}
+
+.logoContainer {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem; /* space-x-2 */
+}
+
+.logoImage {
+  width: 40px;
+  height: 40px;
+  border-radius: 9999px; /* rounded-full */
+  box-shadow: 0 1px 2px 0 var(--color-shadow-light); /* shadow-sm */
+}
+
+.logoText {
+  font-size: 1.5rem; /* text-2xl */
+  font-weight: 700; /* font-bold */
+  color: var(--color-primary); /* Use theme variable */
 }
 
 .links {
-  display: flex;
-  gap: 0.5rem;
+  display: none; /* Hidden by default for mobile */
+  gap: 2rem; /* space-x-8 */
+}
+
+@media (min-width: 768px) { /* md breakpoint */
+  .links {
+    display: flex; /* Show on desktop */
+  }
 }
 
 .link {
-  padding: 0.5rem 1rem;
-  color: var(--color-text);
+  color: var(--color-text-secondary); /* Use theme variable */
   font-weight: 500;
-  border-radius: 50px;
-  transition: all 0.3s ease;
+  transition-property: color;
+  transition-duration: 300ms;
+  padding: 0.5rem 1rem; /* Added padding for better click target */
+  border-radius: 0.5rem; /* Slightly rounded for hover effect */
 }
 
 .link:hover {
-  background-color: rgba(255, 255, 255, 0.1);
+  color: var(--color-primary); /* Use theme variable */
+  background-color: rgba(var(--color-primary-rgb), 0.1); /* Subtle hover background */
 }
 
 .activeLink {
-  background-color: var(--color-accent);
-  color: var(--color-bg);
+  color: var(--color-primary); /* Active link color */
+  font-weight: 600; /* Slightly bolder for active */
+  position: relative;
+}
+
+.activeLink::after {
+  content: '';
+  position: absolute;
+  bottom: -0.25rem; /* Underline position */
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: var(--color-primary); /* Underline color */
+  border-radius: 1px;
+}
+
+.themeToggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--color-text-secondary);
+  font-size: 1.5rem; /* Adjust icon size */
+  transition: color 0.3s ease;
+  margin-left: 1rem; /* Space from last link */
+}
+
+.themeToggle:hover {
+  color: var(--color-primary);
+}
+
+.mobileMenuButton {
+  color: var(--color-text-secondary);
+  transition-property: color;
+  transition-duration: 300ms;
+}
+
+.mobileMenuButton:hover {
+  color: var(--color-primary);
+}
+
+@media (min-width: 768px) { /* md breakpoint */
+  .mobileMenuButton {
+    display: none;
+  }
 }
