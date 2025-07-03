@@ -129,8 +129,8 @@ body[data-theme='dark'] {
   --color-text-light: #1f2937;
   --color-text-muted: #9ca3af;
 
-  --color-background-body: var(--site-color-bg);
-  --color-background-section: #1f2937;
+  --color-background-body: #111827; /* Darkest gray for body background */
+  --color-background-section: #1f2937; /* Darker gray for sections/forms */
   --color-background-card: var(--site-color-card-bg);
   --color-background-light-accent: #2a3547;
   --color-background-dark-footer: #0f172a;
@@ -162,6 +162,24 @@ body {
   color: var(--color-text-primary); /* Use theme variable */
   transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition */
 }
+
+/* Custom scrollbar for a cleaner look - MOVED HERE from Home.module.css */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-border-default);
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-text-muted);
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-text-secondary);
+}
+
 
 a {
   color: inherit;

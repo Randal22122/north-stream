@@ -8,23 +8,6 @@
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* Custom scrollbar for a cleaner look */
-::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
-}
-::-webkit-scrollbar-track {
-  background: var(--color-border-default);
-  border-radius: 10px;
-}
-::-webkit-scrollbar-thumb {
-  background: var(--color-text-muted);
-  border-radius: 10px;
-}
-::-webkit-scrollbar-thumb:hover {
-  background: var(--color-text-secondary);
-}
-
 /* Main content area padding and max-width */
 .main {
   padding-top: 8rem; /* Top padding for fixed nav */
@@ -669,7 +652,7 @@
 .textGray700 { color: var(--color-text-secondary); }
 .textBlue600 { color: var(--color-primary); }
 .textBlue700 { color: var(--color-primary-hover); }
-.textPurple600 { color: var(--color-secondary-brand); } /* Adjusted to use secondary brand color */
+.textPurple600 { color: var(--color-secondary-brand); }
 .textGreen500 { color: var(--color-icon-success); }
 .textGreen300 { color: var(--color-icon-success-light); }
 .text2xl { font-size: 1.5rem; }
@@ -692,12 +675,12 @@
 .bgGray50 { background-color: var(--color-background-section); }
 .bgBlue50 { background-color: var(--color-background-light-accent); }
 .bgBlue600 { background-color: var(--color-primary); }
-.bgPurple600 { background-color: var(--color-secondary-brand); } /* Adjusted to use secondary brand color */
+.bgPurple600 { background-color: var(--color-secondary-brand); }
 .bgGray800 { background-color: var(--color-text-primary); }
 .bgGray900 { background-color: var(--color-background-dark-footer); }
 .bgGradientToR { background-image: linear-gradient(to right, var(--color-gradient-start), var(--color-gradient-end)); }
 .fromBlue600 { --tw-gradient-from: var(--color-primary); --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgba(var(--color-primary-rgb), 0)); }
-.toPurple600 { --tw-gradient-to: var(--color-secondary-brand); } /* Adjusted to use secondary brand color */
+.toPurple600 { --tw-gradient-to: var(--color-secondary-brand); }
 .bgGradientToBr { background-image: linear-gradient(to bottom right, var(--color-gradient-start), var(--color-gradient-end)); }
 .fromBlue500 { --tw-gradient-from: var(--color-gradient-start); --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgba(var(--color-gradient-start-rgb), 0)); }
 .toPurple500 { --tw-gradient-to: var(--color-gradient-end); }
